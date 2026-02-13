@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Looping</title>
+</head>
+<body>
+    <h3>Loops</h3>
+    <p id="app"></p>
+    <script>
+        // array ada 2:
+        // berbasis nama dan associatve
+        // cth : mobil['reza'] : associatve
+        // cth : mobil[0] : bmw
+        const nama = "reza, budi, wawan"
+        const mobil = ["bmw","volvo","mercy"];
+        console.log(mobil)
+
+        const len = mobil.length
+        let text = ""
+
+        // for(let i = 1; i < 5; i++){
+        //     console.log("angka ke" + i);
+        // }
+         for(let i = 0; i < len; i++){
+            if(mobil[i] === "volvo"){
+                continue;
+            }
+            //text += "mobil yang punya adalah " + mobil[i] + " < br >";
+            text += `mobil yang punya adalah ${mobil[i]} <br>`
+            //console.log("mobil yang punya adalah" + mobil[i] + "<br>")
+         }
+
+         // arrow function dan function
+         // mobil.forEach(()=>{});
+         mobil.forEach(function(mb){
+            console.log(`Mobil yang kamu punya adalah ${mb}`)
+         });
+
+
+        document.getElementById('app').innerHTML = text;
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronous and Asynchronous</title>
+</head>
+<body>
+    <!-- 
+        JS = singel thread / block
+    -->
+
+    <script>
+        
+        // console.log("proses pertama")
+        // console.log("proses kedua")
+        // console.log("proses selesai")
+        
+        // console.log("mulai")
+        // setTimeout(function(){
+        //     console.log("proses selesai")
+        // },2000)
+        // console.log("akhir")
+
+        function ambilData(callback){
+            setTimeout(function(){
+                console.log("data bisa di ambil")
+            },2000)
+        }
+
+        ambilData(function(){
+            console.log("Tambilkan data")
+        })
+
+        // 1. pending, 2.success/resolve, 3. reject/gagal
+        function showData(){
+            return new Promise(function(resolve, reject){
+                let status = true
+                if(status){
+                    resolve("data berhasil di ambil")
+                } else{
+                    reject("data gagal di ambil")
+                }
+            })
+        }
+
+        // showData().then(function(result){
+        //     console.log(result)
+        // }).catch(function(error){
+        //     console.log(error)
+        // })
+
+        async function jalankan(){
+            console.log("ayo ambil datanya")
+
+            const hasil = await showData()
+            console.log(hasil)
+        }
+        jalankan()
+
+        async function ambilUser(){
+            const res = await fetch("https://jsonplaceholder.typicode.com/users")
+            const data = await res.json()
+
+            console.log("data berhasil di ambil")
+            console.log(data)
+        }
+        ambilUser()
+    </script>
+</body>
+</html>

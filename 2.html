@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form HTML</title>
+    <style>
+        body{/* Bagian untuk memodifikasi latar */
+            background-color: black; /*untuk merubah warna background*/
+            font-family: Arial, Helvetica, sans-serif; /*untuk merubah font all*/
+            color: gold; /*untuk merubah warna tulisan*/
+        }
+        label{/* Bagian untuk memodifikasi label */
+            display: block; /*untuk  mengatur tata letak setiap baris*/
+            font-weight: bold; /*untuk  mengatur bold, italic, underline*/
+            margin-top: 10px; /*untuk  mengatur jarak keatas*/
+            margin-bottom: 5px; /*untuk  mengatur jarak kebawah*/
+        }
+        /* Bagian untuk memodifikasi label yang lebih spesifik */
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        input[type="date"],
+        select{
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        /* Bagian untuk memodifikasi button */
+        button{
+            padding: 10px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        /* Bagian untuk memodifikasi button ketika cursor mendekati button */
+        button:hover{
+            background-color: gold
+        }
+        .title h1:first-child{
+            color: red;
+        }
+        .title h1[class="orange"]{
+            color : orange;
+        }
+        h1{
+            color: brown;
+        }
+        .container{
+            width: 400px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 10px 20px gold;
+        }
+        .form-group{
+            margin-bottom: 5px;
+        }
+        .radio-group, .checkbox-group {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ini Data Peserta</h1>
+        <!-- class : bisa lebih dari 1
+            id : ga boleh sama -->
+        <div class="title">
+            <h1 class="red">Data Peserta 1</h1>
+            <h1 class="brown">Data Peserta 2</h1>
+            <h1 class="orange">Data Peserta 3</h1>
+        </div>
+        <form action="" method="post">
+            <div class="form-group">
+                <label for="">Nama Lengkap</label>
+                <input type="text" placeholder="Isi nama lengkap anda">
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" placeholder="ex: admin@gmail.com">
+            </div>
+            <div class="form-group">
+                <label for="">Tanggal Lahir</label>
+                <input type="date">
+            </div>
+            <div class="form-group">
+                <label for="">Jenis Kelamin</label>
+                <div class="radio-group">
+                    <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="L"> Laki-laki
+                    <input type="radio" name="jenis_kelamin" id="jenis_kelamin" value="P"> Perempuan
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="">Agama</label>
+                <select name="Agama" id="Agamanya apa?">
+                    <option value="">Pilih Agama</option>
+                    <option value="">Islam</option>
+                    <option value="">Kristen</option>
+                    <option value="">Hindu</option>
+                    <option value="">Buddha</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Hobi</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="hobi"> Gambar
+                    <input type="checkbox" id="hobi"> Melukis
+                    <input type="checkbox" id="hobi"> Lari
+                    <input type="checkbox" id="hobi"> Berenang
+                </div>
+            </div>
+            <br>
+            <button>Kirim</button>
+        </form>
+    </div>
+</body>
+</html>

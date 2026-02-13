@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- "" ' : string, tidak bisa menggunakan operator' -->
+    <script>
+        const nama_depan="Achmad"
+        const nama_belakang="Rifaih"
+        // `` : backtik, atau template literal
+        // interpolation: ${} memasukan expresi JS kedalam string
+        let nama = "Budi";
+        let alamat = "Bekasi";
+        let pesan = `Halo ${nama}, tinggal di ${alamat} yah.`;
+        let angka1 = 1;
+        let angka2 = 1;
+
+        
+
+        console.log(nama_depan + " " + nama_belakang)
+        console.log(pesan)
+        console.log(angka1 + angka2)
+        console.log("Hasilnya adalah :",angka1 + angka2)
+        console.log(`Hasilnya adalah : ${angka1 + angka2}`)
+        console.log(`Berapa hasil kali dari 10*10:, ${10 * 10}`)
+        console.log("Berapa hasil kali dari 10*10:",10 * 10)
+
+        let a = 5;
+            a += 10;
+            console.log(a);
+
+        let username = "admin"
+        let password = "admin"
+
+        // == : untuk membandingkan nilai
+        // === : untuk membandingkan nilai dan tipe datanya
+        // != : untuk membandingkan tidak sama dengan
+        // !== : untuk membandingkan tidak sama dengan dan tipe datanya
+
+        // >, <, >=, <=
+        if(username == "admin"){
+            console.log("Iya Benerr")
+        }
+
+        console.log(5 === "5")
+        console.log(5 < 10)
+        console.log(5 > 10)
+
+        if(username == "admin" && password == "admin"){
+            console.log("Anda berhasil login");
+        }else{
+            console.log("Login gagal")
+        }
+
+        // operator ternary : short if
+        let umur = 20;
+        let status = umur <= 20 ? "Dewasa" : "Anak-anak"
+        // kondisi (?) nilaiTrueJikaini : nilaiElseJikaini
+        console.log(status)
+
+        switch (username) {
+            case "admin":
+                console.log("Iya itu admin")
+                break;
+        
+            default:
+                console.log("Bukan admin")
+                break;
+        }
+
+    </script>
+</body>
+</html>

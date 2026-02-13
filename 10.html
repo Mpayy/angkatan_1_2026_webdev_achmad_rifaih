@@ -1,0 +1,52 @@
+<!-- 
+ DOM : Document Object Model
+ - memanipulasi data atau text
+ - merubah warna
+ - menghapus element
+ - menangani event (click, change, hover, onInput, dll)    
+-->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar DOM</title>
+ </head>
+ <body>
+    <!-- 
+        1. element / tag
+        2. attribute (class dan id)
+    -->
+    <h1>Ini isi normal tidak di apa-apain</h1>
+    <div class="content"></div>
+    <img src="https://placehold.net/400x400.png" alt="" class="" id="gambar">
+    <ul id="list"></ul>
+    <footer id="footer">Design By Mpayy</footer>
+
+    <script>
+        const judul = document.querySelector("h1")
+        const content = document.querySelector(".content")
+        const footer = document.getElementById("footer")
+        const gambar = document.querySelector("#gambar")
+
+        const list = document.getElementById("list")
+        const li = document.createElement("li")
+        li.innerText = "Mi Goreng";
+        li.innerText = "Mi Rebus";
+        list.appendChild(li);
+
+        judul.innerText = "belajar DOM";
+        content.style.backgroundColor = "green";
+        content.style.color = "white"
+        content.innerHTML = "<h3>Content dengan javasript</he>"
+
+        footer.innerText = "Design By PPKD JP 2026"
+        footer.style.textAlign = "center"
+
+        gambar.any = "gambarbaru.png"
+        gambar.alt = "gambar Baru"
+
+        console.log(document);
+    </script>
+ </body>
+ </html>

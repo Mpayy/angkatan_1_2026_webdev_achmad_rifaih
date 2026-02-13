@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asynchronous dan synchronous</title>
+</head>
+<body>
+    <!-- 
+        "Daftar Belanja"
+        1."Tunggu cek stok, dapet hasilnya."
+        2."Kalau stok oke, tunggu bayar, dapet statusnya."
+        3."Kalau bayar sukses, kirim email."
+    -->
+    <script> 
+        const statusStok = true
+        const statusBayar = true
+        const statusEmail = true
+        
+        // Worker
+        async function cekStok() {
+            if(statusStok === true)
+            return new Promise((resolve => {
+                setTimeout(() => {
+                    console.log("Sedang memproses...")
+                    resolve("Berhasil")
+                },2000)
+            }))
+        }
+        async function bayar() {
+            if(statusBayar === true)
+            return new Promise((resolve => {
+                setTimeout(() => {
+                    console.log("Sedang memproses...")
+                    resolve("Berhasil")
+                },2000)
+            }))
+        }
+        async function kirimEmail() {
+            if(statusEmail === true)
+            return new Promise((resolve => {
+                setTimeout(() => {
+                    console.log("Sedang memproses...")
+                    resolve("Berhasil")
+                },2000)
+            }))
+        }
+
+        // Manager/Orkestrator
+        async function prosesCheckout() {
+            console.log("--- Mulai Proses Checkout ---")
+
+            const statusStok = await cekStok()
+            console.log("Status dari gudang:", statusStok)
+            if(statusStok === "Berhasil"){
+                const statusBayar = await bayar()
+                console.log("Status dari kasir:", statusBayar)
+
+                if(statusBayar === "Berhasil"){
+                    const statusEmail = await kirimEmail()
+                    console.log("Status kurir:", statusEmail)
+
+                    if(statusEmail === "Berhasil"){
+                        console.log("email berhasil di kirim")
+                    }else{
+                        console.log("email gagal di kirim")
+                    }
+                }else{
+                    console.log("Pembayaran gagal, email tidak dikirim.")
+                }
+            }else{
+                console.log("Stok habis, tidak bisa melakukan transaksi")
+            }console.log("--- Proses Checkout Selesai ---")
+        }
+        prosesCheckout();
+    </script>
+</body>
+</html>

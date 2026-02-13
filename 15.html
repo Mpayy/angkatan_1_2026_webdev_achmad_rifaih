@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Javascript</title>
+</head>
+<body>
+    <h3>Object</h3>
+    <script>
+        // const siswa = []
+        const siswa = {
+            nama : "pai",
+            umur : 26,
+            jurusan: "web"
+        }
+        siswa.alamat = "bekasi"
+        siswa.nama = "budi"
+        delete siswa.alamat
+        siswa.gender = "laki-laki"
+
+        console.log(siswa)
+        console.log(siswa.nama)
+        console.log(siswa.umur)
+        console.log(siswa.jurusan)
+        console.log(siswa.gender)
+
+        for(let key in siswa){
+            console.log(`${key} : ${siswa[key]}`)
+        }
+
+        Object.keys(siswa).forEach((key)=>{
+            console.log(`${key} : ${siswa[key]}`)
+        })
+
+        const mobil = ["bmw", "volvo", "mercy"]
+        for (let i in mobil) {
+                console.log(`${i} : ${mobil[i]}`)
+            }
+        Object.keys(mobil).forEach((i) => {
+            console.log(`${i} : ${mobil[i]}`)
+        })
+
+        const peserta = [
+            {
+                nama: "pai",
+                umur:26,
+                jurusan: "web dev",
+                nilai: 100
+            },
+            {
+                nama: "bambang",
+                umur:27,
+                jurusan: "web dev",
+                nilai: 90
+            },
+            {
+                nama: "susi",
+                umur:27,
+                jurusan: "web dev",
+                nilai: 80
+            }
+        ]
+        
+        peserta.push({
+            nama: "wawan",
+            umur: 29,
+            jurusan: "web dev",
+            nilai: 70
+        })
+        
+        // untuk mendelet sebuah index= splice(dimulai dari data berapa, dan berapa banyak data)
+        //const hapusIndex =  peserta.splice(3,1)
+        const cariIndex = peserta.findIndex(peserta => peserta.nama === "wawan")
+        peserta.push({
+            nama: "doi",
+            umur: 30,
+            jurusan: "web dev",
+            nilai: 60
+        })
+
+        if(cariIndex !== -1){
+            peserta.splice(cariIndex,1)
+        }
+        
+        console.log(peserta[0].nama)
+        const pesertaBaru = peserta.filter(peserta => peserta.nama !== "pai")
+
+        console.log(peserta)
+        console.log(pesertaBaru)
+        console.log(cariIndex)
+        
+    </script>
+</body>
+</html>

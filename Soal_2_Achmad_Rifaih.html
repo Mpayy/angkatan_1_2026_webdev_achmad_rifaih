@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        aside, main{
+            flex: 1;
+        }
+        .headbar{
+            background-color: rgb(87, 87, 241);
+            color: white;
+            text-align: center;
+            padding: 15px 20px;
+        }
+        .navbar{
+            background-color: blue;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+        }
+        .pembuka{
+            text-align: center;
+        }
+        .isi-besar{
+            color: blue;
+        }
+        .isi-kecil{
+            color: gray;
+        }
+        .kolom {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .detail-siswa{
+            width: 350px;
+            height: 150px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            font-size: 20px;
+            text-align: center;
+        }
+        .detail{
+            background-color: white;
+            color: blue;
+            border: 2px solid blue;
+            width: 50px;
+            
+
+        }
+        .bagian-bawah{
+            background-color: rgb(87, 87, 241);
+            color: white;
+            text-align: center;
+            
+        }
+        @media (max-width: 600px){
+            .kolom{
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="headbar">
+        <div>
+            <h1>Website Profil Sekolah</h1>
+        </div>
+    </header>
+
+    <nav>
+        <div class="navbar">
+            <h5>profil</h5>
+            <h5>Siswa</h5>
+            <h5>Kontak</h5>
+        </div>
+    </nav>
+
+    <aside>
+        <div class="pembuka">
+            <h3 class="isi-besar">Profil Sekolah</h3>
+            <p class="isi-kecil">Sekolah kami adalah lembaga pendidikan yang berkomitmen mencetak genersasi berprestasi dan berakhlak mulia</p>
+            <br>
+            <h3 class="isi-besar">Informasi Siswa</h3>
+            <p class="isi-kecil">Data siswa akan di tampilkan pada bagian ini</p>
+        </div>
+    </aside>
+
+    <main>
+        <div class="kolom">
+            <fieldset class="detail-siswa">
+                <h3>Andi</h3>
+                <p class="isi-kecil">Kelas X</p>
+                <button class="detail">Detail</button>
+            </fieldset>
+            <fieldset class="detail-siswa">
+                <h3>Budi</h3>
+                <p class="isi-kecil">Kelas XI</p>
+                <button class="detail">Detail</button>
+            </fieldset>
+            <fieldset class="detail-siswa">
+                <h3>Siti</h3>
+                <p class="isi-kecil">Kelas XI</p>
+                <button class="detail">Detail</button>
+            </fieldset>
+        </div>
+    </main>
+
+    <aside>
+        <div class="pembuka">
+            <br>
+            <h3 class="isi-besar">Kontak Sekolah</h3>
+            <p class="isi-kecil">e-mail: info@sekloh.sch.id</p>
+        </div>
+    </aside>
+
+    <footer class="bagian-bawah">
+        <p>
+            &copy 2025 Website Profil Sekolah
+        </p>
+    </footer>
+
+
+</body>
+</html>

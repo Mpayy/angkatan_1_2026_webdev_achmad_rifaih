@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Javascript</title>
+</head>
+<body>
+    
+    <script>
+        // variabel : sebuah wadah yang bisa menampung apa saja
+        // let, var, const
+
+        // const : nilai tetap
+        const nama  = "reza"
+        //nama = "bambang"
+
+        //let : nilai yang bisa di rubah, dan tidak bisa declare
+        let hp = "081299777484"
+        hp = "089621077954"
+
+        //var : nilai yang bisa di rubah versi lama, bisa declare
+        var alamat = "Jakarta"
+        var alamat = "Bekasi"
+
+        // {}: object, []: array
+        const peserta = {
+            nama: "Budi"
+        }
+        //immutable
+        const pesertaBaru = {
+            ...peserta,
+            nama: "Wawan"
+        }
+        peserta.alamat = "Bekasi"
+        //console.log(peserta)
+        //peserta.nama= "Wawan"
+        console.log(peserta);
+        console.log(pesertaBaru);
+
+        document.write = "Tes kami sedang belajar JS"
+        console.log("alamat :", alamat);
+        console.log(hp);
+        console.log(nama);
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table HTML</title>
+
+    <style>
+        h2{
+            color: gold;
+        }
+        table{
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th,td{
+            padding: 10px;
+            border: 1px solid black;
+            text-align: left;
+        }
+        th{
+            background-color: black;
+            color: gold;
+        }
+        td{
+            background-color: gold;
+            color: black;
+        }
+        .title h1:first-child{
+            color: red;
+        }
+        .title h1[class="orange"]{
+            color : orange;
+        }
+        h1{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <!-- class : bisa lebih dari 1
+    id : ga boleh sama -->
+    <div class="title">
+        <h1 class="red">Data Peserta 1</h1>
+        <h1 class="brown">Data Peserta 2</h1>
+        <h1 class="orange">Data Peserta 3</h1>
+    </div>
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Nama Lengkap</th>
+            <th>Email</th>
+            <th>Tanggal Lahir</th>
+            <th>Jenis Kelamin</th>
+            <th>Agama</th>
+            <th>Hobi</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Pai</td>
+            <td>rifaih712@gmail.com</td>
+            <td>21 Desember 1999</td>
+            <td>Laki-laki</td>
+            <td>Islam</td>
+            <td>Main Game</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<!-- tabel : format table -->
+<!-- tr : table row -->
+<!-- th : table header -->

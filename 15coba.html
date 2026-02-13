@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Inisialisasi Objek
+            const siswa = {
+                nama: "pai",
+                umur: 26,
+                jurusan: "web"
+            };
+
+            // Manipulasi Properti
+            siswa.nama = "budi";          // Update nilai
+            siswa.alamat = "bekasi";      // Tambah properti baru
+            siswa.gender = "laki-laki";   // Tambah properti baru
+            delete siswa.alamat;          // Hapus properti
+
+            // Output Single Line
+            console.log("--- Data Siswa ---");
+            console.log(siswa.nama);
+            console.log(siswa.umur);
+            console.log(siswa.jurusan);
+            console.log(siswa.gender);
+
+        console.log("\n--- Looping Objek ---");
+
+            // Cara A: for...in (Tradisional & Langsung)
+            for (let key in siswa) {
+                console.log(`For-in -> ${key} : ${siswa[key]}`);
+            }
+
+            // Cara B: Object.keys() (Modern & Functional)
+            Object.keys(siswa).forEach((key) => {
+                console.log(`Object.keys -> ${key} : ${siswa[key]}`);
+            });
+
+        console.log("\n--- Looping Array ---");
+            const daftarMobil = ["bmw", "volvo", "mercy"];
+
+            // Menggunakan for...in untuk mendapatkan Index
+            for (let i in daftarMobil) {
+                console.log(`Index ${i} berisi mobil: ${daftarMobil[i]}`);
+            }
+
+            // Cara alternatif yang lebih modern khusus Array (forEach)
+            daftarMobil.forEach((item, index) => {
+                console.log(`forEach -> Index ${index} : ${item}`);
+            });
+
+        console.log("\n");
+        // 1. DATA AWAL (Initialization)
+            const daftarPeserta = [
+                { nama: "pai", umur: 26, jurusan: "web dev", nilai: 100 },
+                { nama: "bambang", umur: 27, jurusan: "web dev", nilai: 90 },
+                { nama: "susi", umur: 27, jurusan: "web dev", nilai: 80 }
+            ];
+
+            // 2. MANIPULASI DATA (Tambah & Cari)
+            // Menambah peserta baru
+            daftarPeserta.push({ nama: "wawan", umur: 29, jurusan: "web dev", nilai: 70 });
+            daftarPeserta.push({ nama: "doi", umur: 30, jurusan: "web dev", nilai: 60 });
+
+            // Mencari dan menghapus "wawan" secara spesifik
+            const indexWawan = daftarPeserta.findIndex(p => p.nama === "wawan");
+
+            daftarPeserta.splice(indexWawan,1);// Menghapus 1 data pada posisi indexWawan
+            
+
+            // 3. FILTERING (Membuat Array Baru)
+            // Membuat daftar baru tanpa "pai"
+            const daftarTanpaPai = daftarPeserta.filter(p => p.umur !== 27);
+
+            // 4. OUTPUT
+            console.log("Nama Peserta Pertama:", daftarPeserta[0].nama);
+            console.log("Index Wawan yang ditemukan:", indexWawan);
+            console.log("Isi Array Asli (setelah manipulasi):", daftarPeserta);
+            console.log("Isi Array Baru (setelah filter):", daftarTanpaPai);
+    </script>
+</body>
+</html>

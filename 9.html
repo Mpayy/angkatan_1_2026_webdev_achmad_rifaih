@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 2</title>
+</head>
+<body>
+    <!-- 
+        buatlah sistem passing grade
+        siswa dinyatakana lulus, ketika memenuhi semua syarat sebagai berikut:
+        1. nilai teori 75
+        2. nilai praktek minimal 80
+        3. kehadiran minimal 90%
+        4. tidak memiliki pelanggaran berat : true false
+
+        ketentuan:
+        jika rata-rata > 90 maka lulus dengan predikat baik
+        selai itu lulus
+
+        kehadiran kurang dari 90% tidak lulus(kehadiran kurang)
+        nilai teori kurang dari 75 tidak lulus(teori kurang)
+        nilai praktek kurang dari 80 tidak lulus(praktek kurang)
+        jika ada pelanggaran berat tidak lulus (pelanggaran disiplin)
+
+        output
+        nama : achmad rifaih
+        rata-rata : 81.5
+        status : lulus
+
+        rumus menghitung rata-rata: (nilai teori + nilai praktek) / 2
+    -->
+
+    <script>
+        const siswa = {
+            nama : "AchmadRifaih",
+            nilaiTeori : 90,
+            nilaiPraktek : 90,
+            nilaiKehadiran : 90,
+            nilaiPelanggaran : false
+        }
+        let mean = (siswa.nilaiTeori + siswa.nilaiPraktek)/2
+        let status = ""
+        let predikat = ""
+
+        if(siswa.nilaiTeori < 75){
+            status = "tidak lulus(teori kurang)"
+        }else if(siswa.nilaiPraktek < 80){
+            status = "tidak lulus(praktek kurang)"
+        }else if(siswa.nilaiKehadiran < 90){
+            status = "tidak lulus(kehadiran kurang)"
+        }else if(siswa.nilaiPelanggaran == true){
+            status = "tidak lulus (pelanggaran disiplin)"
+        }else(status = "lulus")
+
+        if(mean < 90){
+            predikat = "lulus dengan predikat biasa"
+        } else (predikat = "lulus dengan predikat baik")
+        
+
+
+
+        console.log("Nama Siswa :", siswa.nama)
+        console.log("kelulusan :", status)
+        if(status == "lulus"){
+            console.log("predikat :", predikat)
+        }
+    </script>
+</body>
+</html>
