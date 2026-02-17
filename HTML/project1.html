@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Monitoring Stok Gudang UMKM</title>
+</head>
+
+<body>
+    <h2>Stok Gudang Real-Time</h2>
+    <button onclick="renderStok()">Refresh Data</button>
+    <button onclick="tambahBarang()">Tambah Data</button>
+    <br><br>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama Barang</th>
+                <th>Stok</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody id="tabel-data">
+        </tbody>
+    </table>
+    <script src="../JS/project1.js"></script>
+</body>
+
+</html>

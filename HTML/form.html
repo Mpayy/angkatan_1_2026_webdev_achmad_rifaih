@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Latihan Form & Table</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 6px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <!-- FORM INPUT -->
+    <h1>Form Data Siswa</h1>
+    <!-- PESAN ERROR -->
+    <p id="error" class="error"></p>
+    <form id="formSiswa">
+        <div>
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" placeholder="Masukan Nama">
+        </div>
+        <div>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" placeholder="exampel@gmail.com">
+        </div>
+        <div>
+            <label for="umur">Umur:</label>
+            <input type="number" id="umur" placeholder="Masukan Umur">
+        </div>
+        <div>
+            <label for="">Jenis Kelamin</label>
+            <input type="radio" name="jenis_kelamin" id="jk_l" value="L">
+            <label for="jk_l">Laki-laki</label>
+            <input type="radio" name="jenis_kelamin" id="jk_p" value="P">
+            <label for="jk_p">Perempuan</label>
+        </div>
+        <div>
+            <label for="">Agama</label>
+            <select name="agama" id="agama">Agama
+                <option value="">Pilih Agama</option>
+                <option value="islam">Islam</option>
+                <option value="kristen">Kristen</option>
+                <option value="hindu">Hindu</option>
+                <option value="buddha">Buddha</option>
+            </select>
+        </div>
+        <div>
+            <label for="">Hobi</label>
+            <div>
+                <input type="checkbox" name="hobi" id="basket" value="Basket">
+                <label for="basket">Basket</label>
+                <input type="checkbox" name="hobi" id="volly" value="Volly">
+                <label for="volly">Volly</label>
+                <input type="checkbox" name="hobi" id="soccer" value="Soccer">
+                <label for="soccer">Soccer</label>
+            </div>
+        </div>
+        
+        <button type="submit">Tambah</button>
+    </form>
+
+    <hr>
+
+    <!-- TABEL -->
+    <h2>Daftar Siswa</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Umur</th>
+                <th>Jenis Kelamin</th>
+                <th>Agama</th>
+                <th>Hobi</th>
+            </tr>
+        </thead>
+        <tbody id="tabelSiswa">
+            <!-- Data akan masuk di sini -->
+        </tbody>
+    </table>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Ambil elemen form
+        const form = document.getElementById("formSiswa");
+
+        // Event saat form dikirim
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // cegah reload
+
+            // Ambil nilai input
+            const nama = document.getElementById("nama").value;
+            const email = document.getElementById("email").value;
+            const umur = document.getElementById("umur").value;
+            const jenisKelamin = document.querySelector('input[name="jenis_kelamin"]:checked');
+            const agama = document.getElementById("agama").value;
+            
+            const hobi = document.querySelectorAll('input[name="hobi"]:checked')
+            const hobiTerpilih = [...hobi].map(checkbox => checkbox.value)
+ 
+ 
+            const error = document.getElementById("error");
+
+            // Validasi sederhana
+            if (nama === "" || email ==="" || umur === "" || !jenisKelamin || agama === "" || hobiTerpilih.length === 0 ) {
+                error.textContent = "Nama, Email, Umur, Jenis Kelamin, Agama, Hobi wajib diisi!";
+                return;
+            }
+
+            error.textContent = ""; // hapus error
+
+            // Tambah baris ke tabel
+            const tabel = document.getElementById("tabelSiswa");
+            tabel.innerHTML += `
+                <tr>
+                    <td>${nama}</td>
+                    <td>${email}</td>
+                    <td>${umur}</td>
+                    <td>${jenisKelamin.value}</td>
+                    <td>${agama}</td>
+                    <td>${hobiTerpilih.join(",")}</td>
+                </tr>
+            `;
+
+            // Reset form
+            form.reset();
+        });
+    </script>
+</body>
+</html>

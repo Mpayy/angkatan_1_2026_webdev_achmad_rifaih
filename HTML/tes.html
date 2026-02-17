@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!-- Menandakan dokumen HTML5 -->
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <!-- Supaya teks Indonesia tampil normal -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Supaya responsif di HP -->
+
+    <title>Belajar HTML Dasar</title>
+
+    <!-- CSS sederhana -->
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        header, footer { background: #f2f2f2; padding: 10px; }
+        section { margin-bottom: 20px; }
+        table, th, td { border: 1px solid #000; border-collapse: collapse; padding: 6px; }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1>Belajar HTML Dasar</h1>
+        <nav>
+            <!-- Link navigasi -->
+            <a href="#text">Text</a> |
+            <a href="#form">Form</a> |
+            <a href="#table">Table</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- SECTION TEXT -->
+        <section id="text">
+            <h2>Text & Formatting</h2>
+
+            <p>Ini adalah <strong>paragraf</strong> dengan <em>penekanan</em>.</p>
+
+            <p>
+                Contoh singkatan:
+                <abbr title="HyperText Markup Language">HTML</abbr>
+            </p>
+
+            <p>
+                Kode: <code>console.log("Hello")</code>
+            </p>
+
+            <p>
+                Teks <mark>ditandai</mark> dan <del>dihapus</del>
+            </p>
+
+            <hr>
+            <!-- Garis pemisah -->
+        </section>
+
+        <!-- SECTION LIST -->
+        <section>
+            <h2>List</h2>
+
+            <!-- List tidak berurutan -->
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <!-- List berurutan -->
+            <ol>
+                <li>Buka editor</li>
+                <li>Tulis kode</li>
+                <li>Buka browser</li>
+            </ol>
+        </section>
+
+        <!-- SECTION IMAGE -->
+        <section>
+            <h2>Image</h2>
+
+            <!-- Menampilkan gambar -->
+            <img src="https://via.placeholder.com/150" alt="Contoh gambar">
+        </section>
+
+        <!-- SECTION FORM -->
+        <section id="form">
+            <h2>Form</h2>
+
+            <!-- Form input -->
+            <form>
+                <label for="nama">Nama:</label><br>
+                <input type="text" id="nama" name="nama"><br><br>
+
+                <label for="pesan">Pesan:</label><br>
+                <textarea id="pesan" rows="3"></textarea><br><br>
+
+                <label>
+                    <input type="checkbox"> Saya setuju
+                </label><br><br>
+
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+
+        <!-- SECTION TABLE -->
+        <section id="table">
+            <h2>Table</h2>
+
+            <table>
+                <caption>Data Siswa</caption>
+                <thead>
+                    <tr>
+                        <th>Nama</th>
+                        <th>Umur</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ani</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>Budi</td>
+                        <td>22</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- SECTION DETAILS -->
+        <section>
+            <h2>Details</h2>
+
+            <!-- Bisa dibuka & ditutup -->
+            <details>
+                <summary>Klik untuk lihat</summary>
+                <p>Ini adalah konten tersembunyi.</p>
+            </details>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <small>© 2026 Belajar HTML</small>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // Script sederhana
+        console.log("HTML siap digunakan");
+    </script>
+</body>
+</html>
